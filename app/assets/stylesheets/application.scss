@@ -1,2 +1,16 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+.user-product-options {
+  display: flex;
+}
+
+.user-product-options form {
+  margin: 1em;
+}
+
+.user-product-options .quantity {
+  display: inline-block;
+  width: 70px;
+  margin-right: .6em;
+}
