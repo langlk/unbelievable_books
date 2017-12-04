@@ -1,0 +1,17 @@
+<h1>Your Cart</h1>
+
+<% if @cart.order_items.any? %>
+  <ul>
+    <% @cart.order_items.each do |item| %>
+      <li class="order-item">
+        <%= item.quantity %>
+        <%= link_to item.product.name, product_path(item.product) %>
+        $<%= item.reserved_price %> each |
+
+        <%= link_to "Remove" %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>You have no items in your cart.</h3>
+<% end %>

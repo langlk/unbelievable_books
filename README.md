@@ -63,9 +63,9 @@ To install on your own machine, follow the instructions below:
 To Do:
 
 * Admin
-  * CRUD for products
+  * X CRUD for products
   * feature product(s)
-  * Price change (edit)
+  * X Price change (edit)
   * Discount (edit product)
   * Shipping and taxes (APIs)
   * Time discount is in effect
@@ -74,14 +74,14 @@ To Do:
   * Customer reviews on purchased products
 
 * User
-  * Shopping cart (add & remove, view)
+  * Shopping cart (x add & remove, view)
   * cleared cart upon purchase
   * display cart total (quantity & total cost). Navbar
   * List discounted items on site
   * Pay online (API)
-  * Sign up/ create account
+  * X Sign up/ create account
   * Order history
-  * Tag products "raincheck" --> viewable in cart
+  * X Tag products "raincheck" --> viewable in cart
   * Ability to move raincheck items into order proper
   * View quantity (less than ten of product)
   * Reviews (view & add)
