@@ -5,6 +5,6 @@ class OrderItem < ActiveRecord::Base
   before_create :reserve_price
 
   def reserve_price
-    reserved_price = product.price
+    self.reserved_price = product.price
   end
 end
