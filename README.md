@@ -37,6 +37,7 @@ To install on your own machine, follow the instructions below:
   * Quantity
   * Discount
   * Featured
+  * Author
 * Users
   * Name
   * email
