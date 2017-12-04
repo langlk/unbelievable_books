@@ -1,0 +1,15 @@
+<h1>All Books</h1>
+
+<% if current_user && current_user.admin? %>
+  <h4><%= link_to "Add a Book", new_product_path %></h4>
+<% end %>
+
+<% if @products.any? %>
+  <% @products.each do |product| %>
+    <div class="product">
+      <h3><%= link_to product.name, product_path(product) %></h3>
+    </div>
+  <% end %>
+<% else %>
+  <h3>There are no saved books.</h3>
+<% end %>

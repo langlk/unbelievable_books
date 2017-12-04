@@ -1,0 +1,16 @@
+<h1><%= @product.name %></h1>
+
+<h3>$<%= @product.price %></h3>
+
+<p><%= @product.description %></p>
+
+<% if current_user && current_user.admin? %>
+<hr>
+<p>
+  <%= link_to "Edit", edit_product_path(@product) %> |
+  <%= link_to "Delete", product_path(@product), data: {
+            confirm: "This will shoot the book into a black hole. Are you sure?",
+            method: "delete"
+            } %>
+</p>
+<% end %>
