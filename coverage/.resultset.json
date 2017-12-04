@@ -571,6 +571,42 @@
         1,
         null
       ],
+      "/Users/Guest/Desktop/unbelievable_books/spec/models/order_items_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/models/order_item.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/spec/models/order_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/models/order.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/Guest/Desktop/unbelievable_books/spec/models/product_spec.rb": [
         1,
         null,
@@ -615,6 +651,6 @@
         null
       ]
     },
-    "timestamp": 1512408180
+    "timestamp": 1512409097
   }
 }

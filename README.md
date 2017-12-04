@@ -48,6 +48,7 @@ To install on your own machine, follow the instructions below:
   * order_id
   * product_id
   * quantity
+  * reserved_price
 * Orders
   * account_id
   * price_total
