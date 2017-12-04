@@ -4,10 +4,10 @@ class Account < ActiveRecord::Base
   has_many :orders
   validates_presence_of :user
 
-  def current_order
-    current = self.orders.where(status: "Cart").take
-    if current
-      return current
+  def cart
+    cart_order = self.orders.where(status: "Cart").take
+    if cart_order
+      return cart_order
     else
       return self.orders.create(status: "Cart", price_total: 0)
     end

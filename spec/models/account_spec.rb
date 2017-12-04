@@ -6,10 +6,10 @@ describe Account do
   it { should have_many :orders }
   it { should validate_presence_of :user }
 
-  describe "#current_order" do
+  describe "#cart" do
     it "returns the order with status 'cart' associated with the account" do
       user = FactoryBot.create(:user)
-      expect(user.account.current_order.status).to eq("Cart")
+      expect(user.account.cart.status).to eq("Cart")
     end
   end
 
