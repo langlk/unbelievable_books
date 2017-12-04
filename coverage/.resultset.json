@@ -533,14 +533,16 @@
         null,
         null
       ],
-      "/Users/Guest/Desktop/unbelievable_books/spec/factories/users.rb": [
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
       "/Users/Guest/Desktop/unbelievable_books/config/routes.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         null,
@@ -560,7 +562,107 @@
         1,
         null
       ],
+      "/Users/Guest/Desktop/unbelievable_books/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
       "/Users/Guest/Desktop/unbelievable_books/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/channels/application_cable/channel.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/channels/application_cable/connection.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/controllers/cart_controller.rb": [
+
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/controllers/order_items_controller.rb": [
+
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/controllers/products_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/controllers/reviews_controller.rb": [
+
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/jobs/application_job.rb": [
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/mailers/application_mailer.rb": [
+        1,
+        1,
         1,
         null
       ],
@@ -569,6 +671,39 @@
         1,
         1,
         1,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/models/order.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/models/order_item.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/models/product.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/app/models/review.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/Guest/Desktop/unbelievable_books/spec/factories/users.rb": [
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/Guest/Desktop/unbelievable_books/spec/models/order_items_spec.rb": [
@@ -583,13 +718,6 @@
         2,
         null
       ],
-      "/Users/Guest/Desktop/unbelievable_books/app/models/order_item.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/Guest/Desktop/unbelievable_books/spec/models/order_spec.rb": [
         1,
         null,
@@ -599,12 +727,6 @@
         2,
         2,
         2,
-        null
-      ],
-      "/Users/Guest/Desktop/unbelievable_books/app/models/order.rb": [
-        1,
-        1,
-        1,
         null
       ],
       "/Users/Guest/Desktop/unbelievable_books/spec/models/product_spec.rb": [
@@ -618,12 +740,6 @@
         2,
         null
       ],
-      "/Users/Guest/Desktop/unbelievable_books/app/models/product.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/Guest/Desktop/unbelievable_books/spec/models/review_spec.rb": [
         1,
         null,
@@ -635,13 +751,6 @@
         2,
         null
       ],
-      "/Users/Guest/Desktop/unbelievable_books/app/models/review.rb": [
-        1,
-        1,
-        1,
-        1,
-        null
-      ],
       "/Users/Guest/Desktop/unbelievable_books/spec/models/user_spec.rb": [
         1,
         null,
@@ -651,6 +760,6 @@
         null
       ]
     },
-    "timestamp": 1512409097
+    "timestamp": 1512411978
   }
 }
