@@ -5,5 +5,4 @@ describe Order do
   it { should validate_presence_of :account }
   it { should validate_presence_of :price_total }
   it { should validate_presence_of :status }
-  it { should validate_presence_of :raincheck }
 end

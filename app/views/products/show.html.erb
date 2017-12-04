@@ -2,6 +2,12 @@
 <h4>By <%= @product.author %></h4>
 <h3>$<%= @product.price %></h3>
 
+<%= form_for @order_item do |f| %>
+  <%= f.hidden_field :product_id, value: @product.id %>
+  <%= f.number_field :quantity, placeholder: 'Quantity' %>
+  <%= f.submit "Add to cart" %>
+<% end %>
+
 <p><%= @product.description %></p>
 
 <% if current_user && current_user.admin? %>
