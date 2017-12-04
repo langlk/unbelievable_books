@@ -11,4 +11,8 @@ class Order < ActiveRecord::Base
   def update_total
     self.price_total = self.add_total
   end
+
+  def book_count
+    self.order_items.collect { |item| item.quantity }.sum
+  end
 end

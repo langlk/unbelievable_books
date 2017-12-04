@@ -76,16 +76,16 @@ To Do:
 * User
   * X Shopping cart (add & remove, view)
   * cleared cart upon purchase
-  * display cart total (quantity & total cost). Navbar
+  * X display cart total (quantity & total cost). Navbar
   * List discounted items on site
   * Pay online (API)
   * X Sign up/ create account
   * Order history
   * X Tag products "raincheck" --> viewable in cart
-  * Ability to move raincheck items into order proper
+  * X Ability to move raincheck items into order proper
   * View quantity (less than ten of product)
   * Reviews (view & add)
-  * Access cart via account login
+  * X Access cart via account login
   * Confirmation email upon completed order (Mailing)
     * Confirmation email once order shipped
 
