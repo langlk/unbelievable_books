@@ -18,6 +18,16 @@ class OrderItemsController < ApplicationController
     end
   end
 
+  def update
+    @order_item = OrderItem.find(params[:id])
+    if @order_item.update(order: current_cart)
+      flash[:notice] = 'Book beamed to cart!'
+    else
+      flash[:alert] = @order_item.errors.full_messages
+    end
+    redirect_to cart_path
+  end
+
   def destroy
     @order_item = OrderItem.find(params[:id])
     @order_item.destroy

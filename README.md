@@ -74,7 +74,7 @@ To Do:
   * Customer reviews on purchased products
 
 * User
-  * Shopping cart (x add & remove, view)
+  * X Shopping cart (add & remove, view)
   * cleared cart upon purchase
   * display cart total (quantity & total cost). Navbar
   * List discounted items on site
