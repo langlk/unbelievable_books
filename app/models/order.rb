@@ -5,7 +5,7 @@ class Order < ActiveRecord::Base
   before_save :update_total
 
   def add_total
-    self.order_items.collect { |item| item.reserved_price * item.quantity }.sum
+    OrderItem.where(order: self).collect { |item| item.reserved_price * item.quantity }.sum
   end
 
   def update_total
