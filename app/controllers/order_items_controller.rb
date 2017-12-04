@@ -18,6 +18,13 @@ class OrderItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @order_item = OrderItem.find(params[:id])
+    @order_item.destroy
+    flash[:notice] = "Book removed."
+    redirect_to cart_path
+  end
+
 private
   def order_item_params
     params.require(:order_item).permit(:quantity, :product_id)
