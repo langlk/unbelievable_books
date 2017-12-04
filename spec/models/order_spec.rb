@@ -15,13 +15,22 @@ describe Order do
     end
   end
 
-  describe "#update_total" do
+  describe '#update_total' do
     it "sets the total cost of an order" do
       order = FactoryBot.create(:order)
       item = FactoryBot.create(:order_item, order: order)
       order = Order.find(order.id)
       order.update_total
       expect(order.price_total).to eq (75)
+    end
+  end
+
+  describe '#book_count' do
+    it "returns the quantity of books in an order" do
+      order = FactoryBot.create(:order)
+      item = FactoryBot.create(:order_item, order: order)
+      order = Order.find(order.id)
+      expect(order.book_count).to eq (5)
     end
   end
 
