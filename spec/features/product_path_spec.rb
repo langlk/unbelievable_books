@@ -20,4 +20,13 @@ describe "the product management path" do
     click_button "Save"
     expect(page).to have_content("Carbonite Underpants")
   end
+
+  it "allows an admin to edit products" do
+    @user.update(admin: true)
+    book = FactoryBot.create(:product)
+    visit edit_product_path(book)
+    fill_in "Name", with: "A book of BEES!"
+    click_button "Save"
+    expect(page).to have_content("A book of BEES!")
+  end
 end
