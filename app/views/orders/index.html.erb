@@ -1,0 +1,21 @@
+<h1>Order History</h1>
+<% if @orders.any? %>
+  <% @orders.each do |order| %>
+    <div class="order">
+      <h3><%= order.created_at.strftime("%B %-d, %Y") %></h3>
+      <ul>
+        <% order.order_items.each do |item| %>
+          <li class="order-item">
+            <%= item.quantity %>
+            <%= link_to item.product.name, product_path(item.product) %>
+            $<%= item.reserved_price %> each |
+            $<%= item.reserved_price * item.quantity %> total
+          </li>
+        <% end %>
+      </ul>
+      <p>Order total: $<%= order.price_total %></p>
+    </div>
+  <% end %>
+<% else %>
+  <h3>You have yet to place an order!</h3>
+<% end %>

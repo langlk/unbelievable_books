@@ -5,6 +5,8 @@ class Order < ActiveRecord::Base
   before_save :update_total
   before_destroy :remove_items
 
+  scope :placed, -> { where("status = 'Placed'") }
+
   def add_total
     OrderItem.where(order: self).collect { |item| item.reserved_price * item.quantity }.sum
   end

@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   end
 
   resources :accounts, only: [:index, :update]
+  resources :orders, only: [:index]
 end
