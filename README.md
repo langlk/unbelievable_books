@@ -67,9 +67,9 @@ To Do:
   * X feature product(s)
   * X Price change (edit)
   * Discount (edit product)
+    * X Time discount is in effect
+    * Discount for preferred customers
   * Shipping and taxes (APIs)
-  * Time discount is in effect
-  * Discount for preferred customers
   * Out of Stock order block
     * X Block on add to cart
     * Still need check when placing order

@@ -37,4 +37,16 @@ describe Product do
       expect(Product.featured).to eq([p1,p3])
     end
   end
+
+  describe '#has_discount?' do
+    it "returns true if book is discounted at current time" do
+      p1 = FactoryBot.create(:product, discount: 10, discount_end: Date.today)
+      expect(p1.has_discount?).to eq(true)
+    end
+
+    it "returns false if book is not discounted at current time" do
+      p1 = FactoryBot.create(:product)
+      expect(p1.has_discount?).to eq(nil)
+    end
+  end
 end
