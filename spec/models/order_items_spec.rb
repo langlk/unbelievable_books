@@ -7,6 +7,18 @@ describe OrderItem do
   it { should validate_presence_of :product }
   it { should validate_presence_of :quantity }
 
+  describe '#check_quantity' do
+    it "should not allow an order_item to be saved if its quantity is 0 or less" do
+      item = FactoryBot.build(:order_item, quantity: 0)
+      expect(item.save).to eq(false)
+    end
+
+    it "should not allow an order_item to be saved if its quantity is larger than the product quantity" do
+      item = FactoryBot.build(:order_item, quantity: 1000000)
+      expect(item.save).to eq(false)
+    end
+  end
+
   describe '#reserve_price' do
     it "sets price of book to current list price" do
       item = FactoryBot.create(:order_item)
