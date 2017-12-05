@@ -14,6 +14,15 @@ describe "the cart management path" do
     visit product_path(book)
     click_on "Raincheck"
     visit cart_path
-    expect(page).to have_content("You and Your Bantha") 
+    expect(page).to have_content("You and Your Bantha")
   end
+
+  it "allows user to add items to cart" do
+    book = FactoryBot.create(:product)
+    visit product_path(book)
+    click_on "Add to cart"
+    visit cart_path
+    expect(page).to have_content("You and Your Bantha")
+  end
+
 end
