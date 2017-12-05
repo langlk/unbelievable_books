@@ -25,4 +25,26 @@ describe "the cart management path" do
     expect(page).to have_content("You and Your Bantha")
   end
 
+  it "allows user to move items from raincheck to cart" do
+    book = FactoryBot.create(:product)
+    visit product_path(book)
+    click_on "Raincheck"
+    visit cart_path
+    click_on "Add to cart"
+    expect(page).to have_content("Your Cart 1 You and Your Bantha")
+  end
+
+  it "displays error message when book cannot be updated from raincheck to cart" do
+    book = FactoryBot.create(:product)
+    visit product_path(book)
+    click_on "Raincheck"
+    visit cart_path
+    book.update(quantity: 0)
+    click_on "Add to cart"
+    expect(page).to have_content ("Something went wrong")
+  end
+
+  # "Book vented from airlock."
+
+
 end

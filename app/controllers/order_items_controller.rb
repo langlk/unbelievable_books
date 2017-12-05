@@ -31,7 +31,7 @@ class OrderItemsController < ApplicationController
   def destroy
     @order_item = OrderItem.find(params[:id])
     @order_item.destroy
-    flash[:notice] = "Book removed."
+    flash[:notice] = "Book vented from airlock."
     redirect_to cart_path
   end
 
