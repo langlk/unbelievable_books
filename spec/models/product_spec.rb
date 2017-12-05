@@ -60,5 +60,15 @@ describe Product do
       p1 = FactoryBot.create(:product, price: 100, discount: 10)
       expect(p1.get_price).to eq(100)
     end
+
+    it "returns 10% off on non-discounted books if status is preferred" do
+      p1 = FactoryBot.create(:product, price: 100)
+      expect(p1.get_price(true)).to eq(90)
+    end
+
+    it "returns time discount if preferred and item discounted" do
+      p1 = FactoryBot.create(:product, price: 100, discount: 20, discount_end: Date.today)
+      expect(p1.get_price(true)).to eq(80)
+    end
   end
 end
