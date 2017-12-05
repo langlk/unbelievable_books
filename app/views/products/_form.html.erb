@@ -20,6 +20,14 @@
         <%= f.label :quantity %>
         <%= f.number_field :quantity, class: 'form-control' %>
     </div>
+    <div class="form-group">
+        <%= f.label :discount %>
+        <%= f.number_field :discount, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :discount_end %>
+        <%= f.date_field :discount_end, class: 'form-control' %>
+    </div>
     <%= f.submit "Save", class: "btn btn-primary" %>
   <% end %>
 </div>

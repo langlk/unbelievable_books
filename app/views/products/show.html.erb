@@ -3,7 +3,7 @@
 <% end %>
 <h1><%= @product.name %></h1>
 <h4>By <%= @product.author %></h4>
-<h3>$<%= @product.price %></h3>
+<h3>$<%= @product.get_price %></h3>
 
 <% if @product.low_stock? %>
   <h5 class="text-danger">Low Stock! Only <%= @product.quantity %> remaining!</h5>

@@ -8,4 +8,13 @@ class Product < ActiveRecord::Base
   def low_stock?
     self.quantity <= 10
   end
+
+  def get_price
+    if self.discount && self.discount_end
+      if self.discount_end >= Date.today
+        return self.price - (self.price * (self.discount / 100.0)).to_i
+      end
+    end
+    return self.price
+  end
 end
