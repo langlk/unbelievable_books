@@ -1,0 +1,15 @@
+<h1>Accounts</h1>
+<% if @accounts.any? %>
+<ul>
+  <% @accounts.each do |account| %>
+    <li>
+      <%= account.user.email %> |
+      <% if !account.preferred %>
+        <%= link_to "Make Preferred", account_path(account), data: { method: "patch" } %> |
+      <% else %>
+        <%= link_to "Remove Preferred", account_path(account), data: { method: "patch" } %> |
+      <% end %>  
+    </li>
+  <% end %>
+</ul>
+<% end %>
