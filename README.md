@@ -70,17 +70,17 @@ To Do:
     * X Time discount is in effect
     * X Discount for preferred customers
   * Shipping and taxes (APIs)
-  * Out of Stock order block
+  * X Out of Stock order block
     * X Block on add to cart
-    * Still need check when placing order
+    * X Still need check when placing order
   * Customer reviews on purchased products
 
 * User
   * X Shopping cart (add & remove, view)
-  * cleared cart upon purchase
+  * X cleared cart upon purchase
   * X display cart total (quantity & total cost). Navbar
   * X List discounted items on site
-  * Pay online (API)
+  * X Pay online (API)
   * X Sign up/ create account
   * Order history
   * X Tag products "raincheck" --> viewable in cart
@@ -92,7 +92,7 @@ To Do:
     * Confirmation email once order shipped
 
 * User API
-  * Pay for purchases online (Stripe API)
+  * X Pay for purchases online (Stripe API)
   * Calculate cost of order in non-dollar currency (Currency Layer API)
   * Random API of our choice
 

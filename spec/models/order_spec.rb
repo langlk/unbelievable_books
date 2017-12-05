@@ -44,5 +44,19 @@ describe Order do
     end
   end
 
+  describe '#confirm_items' do
+    it "return true if sufficient quantities of a book are available when purchased" do
+      order = FactoryBot.create(:order)
+      item = FactoryBot.create(:order_item, order: order)
+      expect(order.confirm_items).to eq(true)
+    end
+
+    it "returns false for purchase of books for which there are insufficient quantities" do
+      order = FactoryBot.create(:order)
+      item = FactoryBot.create(:order_item, order: order)
+      item.product.update(quantity: 0)
+      expect(order.confirm_items).to eq(false) 
+    end
+  end
 
 end
