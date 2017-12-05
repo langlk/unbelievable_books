@@ -6,7 +6,7 @@
 <% if @featured.any? %>
   <h1>Featured</h1>
   <% @featured.each do |product| %>
-    <div class="product">
+    <div class="product-feature">
       <h3><%= link_to product.name, product_path(product) %></h3>
     </div>
   <% end %>
@@ -15,7 +15,7 @@
 <% if @discounted.any? %>
   <h1>On Sale</h1>
   <% @discounted.each do |product| %>
-    <div class="product">
+    <div class="product-sale">
       <h3><%= link_to product.name, product_path(product) %></h3>
       <h5 class="text-success">On sale until: <%= product.discount_end.strftime("%B %-d, %Y") %></h5>
     </div>
@@ -27,6 +27,9 @@
   <% @products.each do |product| %>
     <div class="product">
       <h3><%= link_to product.name, product_path(product) %></h3>
+      <% if product.quantity < 1 %>
+        <h5 class="text-danger">Sold Out!</h5>
+      <% end %>
     </div>
   <% end %>
 <% else %>

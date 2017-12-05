@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   scope :discounted, -> { where("discount > 0 AND discount_end >= ?", Date.today).order("discount_end ASC")}
 
   def low_stock?
-    self.quantity <= 10
+    self.quantity <= 10 && self.quantity > 0
   end
 
   def has_discount?

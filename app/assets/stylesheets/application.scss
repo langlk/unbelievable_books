@@ -14,3 +14,12 @@
   width: 70px;
   margin-right: .6em;
 }
+
+.product {
+  display: flex;
+  align-items: baseline;
+}
+
+.product .text-danger {
+  margin-left: 1em;
+}

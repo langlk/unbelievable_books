@@ -16,22 +16,25 @@
   <h5 class="text-danger">Low Stock! Only <%= @product.quantity %> remaining!</h5>
 <% end %>
 
-<div class="user-product-options">
-  <%= form_for @order_item do |f| %>
-    <%= f.hidden_field :product_id, value: @product.id %>
-    <%= f.hidden_field :order_type, value: "Cart" %>
-    <%= f.number_field :quantity, { value: 1, max: @product.quantity, min: 1, class: 'form-control quantity'} %>
-    <%= f.submit "Add to cart", class: "btn btn-default" %>
-  <% end %>
+<% if @product.quantity > 0 %>
+  <div class="user-product-options">
+    <%= form_for @order_item do |f| %>
+      <%= f.hidden_field :product_id, value: @product.id %>
+      <%= f.hidden_field :order_type, value: "Cart" %>
+      <%= f.number_field :quantity, { value: 1, max: @product.quantity, min: 1, class: 'form-control quantity'} %>
+      <%= f.submit "Add to cart", class: "btn btn-default" %>
+    <% end %>
 
-  <%= form_for @order_item do |f| %>
-    <%= f.hidden_field :product_id, value: @product.id %>
-    <%= f.hidden_field :quantity, value: 1 %>
-    <%= f.hidden_field :order_type, value: "Raincheck" %>
-    <%= f.submit "Raincheck", class: "btn btn-default" %>
-  <% end %>
-</div>
-
+    <%= form_for @order_item do |f| %>
+      <%= f.hidden_field :product_id, value: @product.id %>
+      <%= f.hidden_field :quantity, value: 1 %>
+      <%= f.hidden_field :order_type, value: "Raincheck" %>
+      <%= f.submit "Raincheck", class: "btn btn-default" %>
+    <% end %>
+  </div>
+<% else %>
+  <h4 class="text-danger">Out of Stock!</h4>
+<% end %>
 <p><%= @product.description %></p>
 
 <% if current_user && current_user.admin? %>
