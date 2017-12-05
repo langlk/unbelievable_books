@@ -13,6 +13,7 @@ gem 'rails-ujs'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'devise'
 gem 'paperclip', '~> 5.0.0'
+gem 'stripe'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -23,6 +24,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'capybara'
   gem 'simplecov', require: false
+  gem 'dotenv-rails'
 end
 
 group :development do

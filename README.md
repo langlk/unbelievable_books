@@ -66,9 +66,9 @@ To Do:
   * X CRUD for products
   * X feature product(s)
   * X Price change (edit)
-  * Discount (edit product)
+  * X Discount (edit product)
     * X Time discount is in effect
-    * Discount for preferred customers
+    * X Discount for preferred customers
   * Shipping and taxes (APIs)
   * Out of Stock order block
     * X Block on add to cart
@@ -79,7 +79,7 @@ To Do:
   * X Shopping cart (add & remove, view)
   * cleared cart upon purchase
   * X display cart total (quantity & total cost). Navbar
-  * List discounted items on site
+  * X List discounted items on site
   * Pay online (API)
   * X Sign up/ create account
   * Order history
