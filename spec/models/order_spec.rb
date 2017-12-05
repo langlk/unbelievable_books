@@ -55,7 +55,16 @@ describe Order do
       order = FactoryBot.create(:order)
       item = FactoryBot.create(:order_item, order: order)
       item.product.update(quantity: 0)
-      expect(order.confirm_items).to eq(false) 
+      expect(order.confirm_items).to eq(false)
+    end
+  end
+
+  describe '#remove_inventory' do
+    it "updates inventory quantities according to order upon purchase" do
+      order = FactoryBot.create(:order)
+      item = FactoryBot.create(:order_item, order: order)
+      order.remove_inventory
+      expect(Product.first.quantity).to eq(5)
     end
   end
 
