@@ -12,6 +12,16 @@
   <% end %>
 <% end %>
 
+<% if @discounted.any? %>
+  <h1>On Sale</h1>
+  <% @discounted.each do |product| %>
+    <div class="product">
+      <h3><%= link_to product.name, product_path(product) %></h3>
+      <h5 class="text-success">On sale until: <%= product.discount_end.strftime("%B %-d, %Y") %></h5>
+    </div>
+  <% end %>
+<% end %>
+
 <h1>All Books</h1>
 <% if @products.any? %>
   <% @products.each do |product| %>

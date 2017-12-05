@@ -4,6 +4,7 @@ class ProductsController < ApplicationController
 
   def index
     @featured = Product.featured
+    @discounted = Product.discounted
     @products = Product.alphabetical
   end
 
