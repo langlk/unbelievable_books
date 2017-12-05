@@ -29,4 +29,12 @@ describe "the product management path" do
     click_button "Save"
     expect(page).to have_content("A book of BEES!")
   end
+
+  it "allows admin to delete products" do
+    @user.update(admin: true)
+    book = FactoryBot.create(:product)
+    visit product_path(book)
+    click_on "Delete"
+    expect(page).to have_no_content("You and Your Bantha")
+  end
 end

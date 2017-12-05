@@ -82,7 +82,7 @@ To Do:
   * X List discounted items on site
   * X Pay online (API)
   * X Sign up/ create account
-  * Order history
+  * X Order history
   * X Tag products "raincheck" --> viewable in cart
   * X Ability to move raincheck items into order proper
   * X View quantity (less than ten of product)
