@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_admin!, except: [:index, :show]
 
   def index
-    @products = Product.all
+    @products = Product.alphabetical
   end
 
   def show
