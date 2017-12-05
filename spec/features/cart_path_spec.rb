@@ -44,7 +44,15 @@ describe "the cart management path" do
     expect(page).to have_content ("Something went wrong")
   end
 
-  # "Book vented from airlock."
+  it "allows user to remove books from cart or raincheck" do
+    book = FactoryBot.create(:product)
+    visit product_path(book)
+    click_on "Add to cart"
+    visit cart_path
+    click_on "Remove"
+    expect(page).to have_content ("Book vented from airlock.")
+  end
+
 
 
 end
