@@ -64,13 +64,15 @@ To Do:
 
 * Admin
   * X CRUD for products
-  * feature product(s)
+  * X feature product(s)
   * X Price change (edit)
   * Discount (edit product)
   * Shipping and taxes (APIs)
   * Time discount is in effect
   * Discount for preferred customers
   * Out of Stock order block
+    * X Block on add to cart
+    * Still need check when placing order
   * Customer reviews on purchased products
 
 * User
@@ -83,7 +85,7 @@ To Do:
   * Order history
   * X Tag products "raincheck" --> viewable in cart
   * X Ability to move raincheck items into order proper
-  * View quantity (less than ten of product)
+  * X View quantity (less than ten of product)
   * Reviews (view & add)
   * X Access cart via account login
   * Confirmation email upon completed order (Mailing)

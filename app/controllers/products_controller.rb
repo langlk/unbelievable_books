@@ -32,7 +32,6 @@ class ProductsController < ApplicationController
   end
 
   def update
-    binding.pry
     @product = Product.find(params[:id])
     if @product.update(product_params)
       flash[:notice] = "Product updated successfully."
