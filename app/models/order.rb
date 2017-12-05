@@ -22,4 +22,20 @@ class Order < ActiveRecord::Base
       item.destroy
     end
   end
+
+  def confirm_items
+    OrderItem.where(order: self).each do |item|
+      if !item.check_quantity
+        errors.add(:order_items, "does not have sufficient stock for #{item.product.name}.")
+        return false
+      end
+    end
+    return true
+  end
+
+  def remove_inventory
+    OrderItem.where(order: self).each do |item|
+      item.product.update(quantity: item.product.quantity - item.quantity)
+    end
+  end
 end
