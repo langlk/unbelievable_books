@@ -12,7 +12,10 @@
       </li>
     <% end %>
   </ul>
-  <p>Order Total $<%= @cart.price_total %> </p>
+  <p>Order Total: $<%= @cart.price_total %> </p>
+  <%= link_to new_cart_charge_path do %>
+    <button type="button" class="btn btn-default">Checkout</button>
+  <% end %>
 <% else %>
   <h3>You have no items in your cart.</h3>
 <% end %>

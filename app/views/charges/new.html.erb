@@ -1,18 +1,37 @@
-<%= form_tag cart_charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-    <label class="amount">
-      <span>Amount: $<%= @cart.price_total %></span>
-    </label>
-  </article>
+<h1>Checkout</h1>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
-          data-amount="<%= @cart.price_total * 100 %>"
-          data-locale="auto"></script>
+<% if @cart.order_items.any? %>
+  <ul>
+    <% @cart.order_items.each do |item| %>
+      <li class="order-item">
+        <%= item.quantity %>
+        <%= link_to item.product.name, product_path(item.product) %>
+        $<%= item.reserved_price %> each |
+        $<%= item.reserved_price * item.quantity %> total
+      </li>
+    <% end %>
+  </ul>
+
+  <%= form_tag cart_charges_path do %>
+    <article>
+      <% if flash[:error].present? %>
+        <div id="error_explanation">
+          <p><%= flash[:error] %></p>
+        </div>
+      <% end %>
+      <label class="amount">
+        <span>Order Total: $<%= @cart.price_total %></span>
+      </label>
+    </article>
+
+    <%= link_to cart_path do %>
+      <button type="button" class="btn btn-default">Back to Cart</button>
+    <% end %>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount="<%= @cart.price_total * 100 %>"
+            data-locale="auto"></script>
+  <% end %>
 <% end %>
