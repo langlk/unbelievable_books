@@ -8,7 +8,7 @@ class OrderItem < ActiveRecord::Base
   after_destroy :update_order_total
 
   def reserve_price
-    self.reserved_price = product.get_price
+    self.reserved_price = product.get_price(self.order.account.preferred)
   end
 
   def update_order_total
