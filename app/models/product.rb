@@ -11,13 +11,11 @@ class Product < ActiveRecord::Base
 
   def has_discount?
     (self.discount && self.discount_end) && (self.discount_end >= Date.today)
-  end 
+  end
 
   def get_price
-    if self.discount && self.discount_end
-      if self.discount_end >= Date.today
-        return self.price - (self.price * (self.discount / 100.0)).to_i
-      end
+    if self.has_discount?
+      return self.price - (self.price * (self.discount / 100.0)).to_i
     end
     return self.price
   end
