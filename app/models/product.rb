@@ -9,6 +9,10 @@ class Product < ActiveRecord::Base
     self.quantity <= 10
   end
 
+  def has_discount?
+    (self.discount && self.discount_end) && (self.discount_end >= Date.today)
+  end 
+
   def get_price
     if self.discount && self.discount_end
       if self.discount_end >= Date.today
