@@ -34,5 +34,15 @@ describe Order do
     end
   end
 
+  describe '#remove_items' do
+    it "removes all associated order items when order is deleted" do
+      order = FactoryBot.create(:order)
+      item = FactoryBot.create(:order_item, order: order)
+      item2 = FactoryBot.create(:order_item, order: order)
+      order.destroy
+      expect(OrderItem.all).to eq([])
+    end
+  end
+
 
 end
