@@ -2,6 +2,10 @@
 <h4>By <%= @product.author %></h4>
 <h3>$<%= @product.price %></h3>
 
+<% if @product.low_stock? %>
+  <h5 class="text-danger">Low Stock! Only <%= @product.quantity %> remaining!</h5>
+<% end %>
+
 <div class="user-product-options">
   <%= form_for @order_item do |f| %>
     <%= f.hidden_field :product_id, value: @product.id %>

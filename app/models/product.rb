@@ -3,4 +3,8 @@ class Product < ActiveRecord::Base
   validates_presence_of :name, :description, :quantity, :price, :author
 
   scope :alphabetical, -> { order(:name) }
+
+  def low_stock?
+    self.quantity <= 10
+  end
 end
