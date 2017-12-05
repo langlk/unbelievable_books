@@ -49,4 +49,16 @@ describe Product do
       expect(p1.has_discount?).to eq(nil)
     end
   end
+
+  describe '#get_price' do
+    it "returns discounted price if discount is active" do
+      p1 = FactoryBot.create(:product, price: 100, discount: 10, discount_end: Date.today)
+      expect(p1.get_price).to eq(90)
+    end
+
+    it "returns normal price if item is not discounted" do
+      p1 = FactoryBot.create(:product, price: 100, discount: 10)
+      expect(p1.get_price).to eq(100)
+    end
+  end
 end
