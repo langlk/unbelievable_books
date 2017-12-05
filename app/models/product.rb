@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
 
   scope :alphabetical, -> { order(:name) }
   scope :featured, -> { where("featured = true") }
+  scope :discounted, -> { where("discount > 0 AND discount_end >= ?", Date.today)}
 
   def low_stock?
     self.quantity <= 10

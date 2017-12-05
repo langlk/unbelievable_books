@@ -71,4 +71,13 @@ describe Product do
       expect(p1.get_price(true)).to eq(80)
     end
   end
+
+  describe '.discounted' do
+    it "returns all products that have an active discount" do
+      p1 = FactoryBot.create(:product, price: 100)
+      p2 = FactoryBot.create(:product, price: 100, discount: 20, discount_end: Date.today)
+      p3 = FactoryBot.create(:product, price: 100, discount: 20, discount_end: Date.today - 5.day)
+      expect(Product.discounted).to eq([p2])
+    end
+  end
 end
