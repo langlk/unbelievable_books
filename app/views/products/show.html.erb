@@ -6,6 +6,9 @@
 <% if @product.has_discount? %>
   <h3><del>$<%= @product.price %></del> <span class="text-success">$<%= @product.get_price %></span></h3>
   <h5 class="text-success">On sale until: <%= @product.discount_end.strftime("%B %-d, %Y") %></h5>
+<% elsif current_user && current_user.account.preferred %>
+  <h3><del>$<%= @product.price %></del> <span class="text-success">$<%= @product.get_price(true) %></span></h3>
+  <h5 class="text-success">Preferred customer discount </h5>
 <% else %>
   <h3>$<%= @product.price %></h3>
 <% end %>
