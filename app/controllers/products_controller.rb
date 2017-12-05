@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
       flash[:notice] = "Product updated successfully."
       redirect_to product_path(@product)
     else
-      flash[:notice] = @product.errors.full_messages
+      flash[:alert] = @product.errors.full_messages
       render :edit
     end
   end

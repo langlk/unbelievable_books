@@ -21,6 +21,13 @@ describe "the product management path" do
     expect(page).to have_content("Carbonite Underpants")
   end
 
+  it "displays errors if product cannot be created" do
+    @user.update(admin: true)
+    visit new_product_path
+    click_button "Save"
+    expect(page).to have_content("Something went wrong")
+  end
+
   it "allows an admin to edit products" do
     @user.update(admin: true)
     book = FactoryBot.create(:product)
@@ -28,6 +35,15 @@ describe "the product management path" do
     fill_in "Name", with: "A book of BEES!"
     click_button "Save"
     expect(page).to have_content("A book of BEES!")
+  end
+
+  it "displays errors if product cannot be updated" do
+    @user.update(admin: true)
+    book = FactoryBot.create(:product)
+    visit edit_product_path(book)
+    fill_in "Name", with: ""
+    click_button "Save"
+    expect(page).to have_content("Something went wrong")  
   end
 
   it "allows admin to delete products" do
