@@ -28,4 +28,13 @@ describe Product do
       expect(product.low_stock?).to eq(false)
     end
   end
+
+  describe '.featured' do
+    it "returns all featured products" do
+      p1 = FactoryBot.create(:product, featured: true)
+      p2 = FactoryBot.create(:product)
+      p3 = FactoryBot.create(:product, featured: true)
+      expect(Product.featured).to eq([p1,p3])
+    end
+  end
 end
