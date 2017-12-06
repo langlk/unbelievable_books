@@ -10,8 +10,13 @@ class OrderItemsController < ApplicationController
     end
     @order_item = @order.order_items.new(order_item_params)
     if @order_item.save
-      flash[:notice] = @message
-      redirect_to product_path(@order_item.product)
+      respond_to do |format|
+        format.html {
+          flash[:notice] = @message
+          redirect_to product_path(@order_item.product)
+        }
+        format.js
+      end
     else
       flash[:alert] = @order_item.errors.full_messages
       redirect_to root_path

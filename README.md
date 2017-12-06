@@ -71,13 +71,13 @@ To Do:
 * Random API of our choice
 
 * AJAX
-  * Click on a product to see detail without going to new page
+  * X Click on a product to see detail without going to new page
   * Add Item to shopping cart without refreshing page
+  * Raincheck without page refresh
   * Edit Item in shopping cart without refreshing page
-  * Show and hide reviews
+  * X Show and hide reviews
   * X Add review without going to new page
     * X Show review form only after clicking button
-  * Raincheck without page refresh
   * Click thumbnail image to see full-size image in lightbox
   * Paginate results
     * Change page without refresh

@@ -1,0 +1,4 @@
+$('#order_item_quantity').val(1);
+$('.alert').remove();
+$('.container.contents').prepend('<div class="alert alert-info">Item added to cart.</div>');
+$('#cart_link').html('Cart: (<%= current_cart.book_count %> Books | $<%= current_cart.price_total %>)');
