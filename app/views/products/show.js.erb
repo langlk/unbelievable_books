@@ -1,2 +1,8 @@
 $('#show_product_<%= @product.id %>').hide();
+$('#hide_details_<%= @product.id %>').show();
 $('#product-<%= @product.id %>').after('<%= j render("show") %>');
+$('#hide_details_<%= @product.id %>').click(function() {
+  $('#product-details-<%= @product.id %>').remove();
+  $('#hide_details_<%= @product.id %>').hide();
+  $('#show_product_<%= @product.id %>').show();
+});
