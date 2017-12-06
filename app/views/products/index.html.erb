@@ -25,8 +25,8 @@
 <h1>All Books</h1>
 <% if @products.any? %>
   <% @products.each do |product| %>
-    <div class="product">
-      <h3><%= link_to product.name, product_path(product) %></h3>
+    <div class="product" id="product-<%= product.id %>">
+      <h3><%= link_to product.name, product_path(product), id: "show_product_#{product.id}", remote: true %></h3>
       <% if product.quantity < 1 %>
         <h5 class="text-danger">Sold Out!</h5>
       <% end %>

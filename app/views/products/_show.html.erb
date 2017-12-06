@@ -1,0 +1,59 @@
+<% if @product.featured %>
+  <h5 class="text-success">Featured Title!</h5>
+<% end %>
+<h1><%= @product.name %></h1>
+<h4>By <%= @product.author %></h4>
+<% if @product.has_discount? %>
+  <h3><del>$<%= @product.price %></del> <span class="text-success">$<%= @product.get_price %></span></h3>
+  <h5 class="text-success">On sale until: <%= @product.discount_end.strftime("%B %-d, %Y") %></h5>
+<% elsif current_user && current_user.account.preferred %>
+  <h3><del>$<%= @product.price %></del> <span class="text-success">$<%= @product.get_price(true) %></span></h3>
+  <h5 class="text-success">Preferred customer discount </h5>
+<% else %>
+  <h3>$<%= @product.price %></h3>
+<% end %>
+<% if @product.low_stock? %>
+  <h5 class="text-danger">Low Stock! Only <%= @product.quantity %> remaining!</h5>
+<% end %>
+
+<% if @product.quantity > 0 %>
+  <div class="user-product-options">
+    <%= form_for @order_item do |f| %>
+      <%= f.hidden_field :product_id, value: @product.id %>
+      <%= f.hidden_field :order_type, value: "Cart" %>
+      <%= f.number_field :quantity, { value: 1, max: @product.quantity, min: 1, class: 'form-control quantity'} %>
+      <%= f.submit "Add to cart", class: "btn btn-default" %>
+    <% end %>
+
+    <%= form_for @order_item do |f| %>
+      <%= f.hidden_field :product_id, value: @product.id %>
+      <%= f.hidden_field :quantity, value: 1 %>
+      <%= f.hidden_field :order_type, value: "Raincheck" %>
+      <%= f.submit "Raincheck", class: "btn btn-default" %>
+    <% end %>
+  </div>
+<% else %>
+  <h4 class="text-danger">Out of Stock!</h4>
+<% end %>
+<p><%= @product.description %></p>
+
+<% if current_user && current_user.admin? %>
+  <hr>
+  <p>
+    <% if !@product.featured %>
+      <%= link_to "Feature", product_path(product: { id: @product.id, featured: true}), data: { method: "patch" } %> |
+    <% else %>
+      <%= link_to "End Feature", product_path(product: { id: @product.id, featured: false}), data: { method: "patch" } %> |
+    <% end %>
+    <%= link_to "Edit", edit_product_path(@product) %> |
+    <%= link_to "Delete", product_path(@product), data: {
+              confirm: "This will shoot the book into a black hole. Are you sure?",
+              method: "delete"
+              } %>
+  </p>
+<% end %>
+<h5><%= link_to "Hide Reviews", product_path(@product), id: "hide_reviews", remote: true %></h5>
+<h5><%= link_to "Show Reviews", product_path(@product), id: "show_reviews", remote: true %></h5>
+<div id="reviews-container">
+  <%= render "reviews/index" %>
+</div>

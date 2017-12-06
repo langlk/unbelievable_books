@@ -11,6 +11,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @order_item = OrderItem.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def new
