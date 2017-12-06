@@ -7,6 +7,12 @@
     <% end %>
   </ul>
   <p>Order Total: $<span id="cart-total"><%= @cart.price_total %></span></p>
+  <p>
+    Other Currencies:
+    <% @quotes.each do |currency, rate| %>
+      <span><strong><%= currency[3..-1] %>:</strong> <%= '%.2f' % (rate * @cart.price_total) %> </span>
+    <% end %>
+  </p>
   <%= link_to new_cart_charge_path do %>
     <button type="button" class="btn btn-default">Checkout</button>
   <% end %>
