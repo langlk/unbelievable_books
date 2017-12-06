@@ -14,5 +14,16 @@ describe "the order history management path" do
     expect(page).to have_content("test@test.com")
   end
 
+  it "allows admin to update user accounts to preferred" do
+    visit accounts_path
+    click_on "Make Preferred"
+    expect(Account.first.preferred).to eq(true)
+  end
 
+  it "allows admin to remove preferred status from user accounts" do
+    @user.account.update(preferred: true)
+    visit accounts_path
+    click_on "Remove Preferred"
+    expect(Account.first.preferred).to eq(false)
+  end
 end
