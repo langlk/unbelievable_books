@@ -26,11 +26,17 @@ class OrderItemsController < ApplicationController
   def update
     @order_item = OrderItem.find(params[:id])
     if @order_item.update(order: current_cart)
-      flash[:notice] = 'Book beamed to cart!'
+      respond_to do |format|
+        format.html {
+          flash[:notice] = 'Book beamed to cart!'
+          redirect_to cart_path
+        }
+        format.js
+      end
     else
       flash[:alert] = @order_item.errors.full_messages
+      redirect_to cart_path
     end
-    redirect_to cart_path
   end
 
   def destroy

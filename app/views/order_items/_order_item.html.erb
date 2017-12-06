@@ -1,0 +1,7 @@
+<li class="order-item">
+  <%= item.quantity %>
+  <%= link_to item.product.name, product_path(item.product) %>
+  $<%= item.reserved_price %> each |
+
+  <%= link_to "Remove", order_item_path(item), data: { method: "delete" } %>
+</li>

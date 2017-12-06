@@ -72,8 +72,8 @@ To Do:
 
 * AJAX
   * X Click on a product to see detail without going to new page
-  * Add Item to shopping cart without refreshing page
-  * Raincheck without page refresh
+  * X Add Item to shopping cart without refreshing page
+  * X Raincheck without page refresh
   * Edit Item in shopping cart without refreshing page
   * X Show and hide reviews
   * X Add review without going to new page

@@ -1,18 +1,12 @@
 <h1>Your Cart</h1>
 
 <% if @cart.order_items.any? %>
-  <ul>
+  <ul id="cart-items">
     <% @cart.order_items.each do |item| %>
-      <li class="order-item">
-        <%= item.quantity %>
-        <%= link_to item.product.name, product_path(item.product) %>
-        $<%= item.reserved_price %> each |
-
-        <%= link_to "Remove", order_item_path(item), data: { method: "delete" } %>
-      </li>
+      <%= render "order_items/order_item", item: item %>
     <% end %>
   </ul>
-  <p>Order Total: $<%= @cart.price_total %> </p>
+  <p>Order Total: $<span id="cart-total"><%= @cart.price_total %></span></p>
   <%= link_to new_cart_charge_path do %>
     <button type="button" class="btn btn-default">Checkout</button>
   <% end %>
@@ -24,10 +18,10 @@
 <% if @rainchecked.order_items.any? %>
   <ul>
     <% @rainchecked.order_items.each do |item| %>
-      <li class="raincheck-item">
+      <li id="raincheck-item-<%= item.id %>">
         <%= link_to item.product.name, product_path(item.product) %>
         $<%= item.product.price %> each |
-        <%= link_to "Add to cart", order_item_path(item), data: { method: "patch" }  %> |
+        <%= link_to "Add to cart", order_item_path(item), remote: true, data: { method: "patch" }  %> |
         <%= link_to "Remove", order_item_path(item), data: { method: "deleted" } %>
       </li>
     <% end %>

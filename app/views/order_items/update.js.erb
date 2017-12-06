@@ -1,0 +1,5 @@
+$('#raincheck-item-<%= @order_item.id %>').remove();
+$('#cart-items').append('<%= j render(@order_item, item: @order_item) %>');
+$('.container.contents').prepend('<div class="alert alert-info">Book beamed to cart!</div>');
+$('#cart_link').html('Cart: ( <%= current_cart.book_count %> Books | $<%= current_cart.price_total %> )');
+$('#cart-total').text('<%= current_cart.price_total %>');
