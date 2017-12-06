@@ -75,8 +75,8 @@ To Do:
   * Add Item to shopping cart without refreshing page
   * Edit Item in shopping cart without refreshing page
   * Show and hide reviews
-  * Add review without going to new page
-    * Show review form only after clicking button
+  * X Add review without going to new page
+    * X Show review form only after clicking button
   * Raincheck without page refresh
   * Click thumbnail image to see full-size image in lightbox
   * Paginate results
