@@ -74,7 +74,7 @@ To Do:
   * X Click on a product to see detail without going to new page
   * X Add Item to shopping cart without refreshing page
   * X Raincheck without page refresh
-  * Edit Item in shopping cart without refreshing page
+  * X Edit Item in shopping cart without refreshing page
   * X Show and hide reviews
   * X Add review without going to new page
     * X Show review form only after clicking button
@@ -84,7 +84,7 @@ To Do:
   * Sort product results without refresh
   * Admin:
     * Product CRUD without refresh
-    * Mark items as on sale without refresh
+    * Mark items as featured without refresh
 
 
 Completed:

@@ -1,0 +1,17 @@
+<%= Date.today.strftime("%B %-d, %Y") %>
+
+Greetings,
+
+Thank you for shopping with Unbelievable Books: Literature that's Out of this Nebula! Your order has been placed and you can expect your books in less than 12 parsecs.
+
+Your Order:
+
+<% @order.order_items.each do |item| %>
+  <%= item.quantity %> <%= item.product.name %>
+  $<%= item.reserved_price %> each | $<%= item.reserved_price * item.quantity %> total
+<% end %>
+Order total: $<%= @order.price_total %>
+
+Thank you for your patronage!
+
+~Unbelievable Booksellers

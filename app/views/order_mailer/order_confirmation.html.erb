@@ -1,0 +1,25 @@
+<h5><%= Date.today.strftime("%B %-d, %Y") %></h5>
+<p>
+Greetings,
+</p>
+
+<p>Thank you for shopping with Unbelievable Books: Literature that's Out of this Nebula! Your order has been placed and you can expect your books in less than 12 parsecs.</p>
+
+<div class="order">
+  <h3>Your Order:</h3>
+  <ul>
+    <% @order.order_items.each do |item| %>
+      <li class="order-item">
+        <%= item.quantity %>
+        <em><%= item.product.name %></em>
+        $<%= item.reserved_price %> each |
+        $<%= item.reserved_price * item.quantity %> total
+      </li>
+    <% end %>
+  </ul>
+  <p><strong>Order total: $<%= @order.price_total %></strong></p>
+</div>
+
+<p>Thank you for your patronage!</p>
+
+<p>~Unbelievable Booksellers</p>

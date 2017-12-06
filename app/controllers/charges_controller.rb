@@ -25,6 +25,7 @@ class ChargesController < ApplicationController
       @cart.remove_inventory
       # Change cart order from cart to placed.
       @cart.update(status: "Placed")
+      OrderMailer.order_confirmation(@cart).deliver
     else
       flash[:alert] = @cart.errors.full_messages
       flash[:alert].push("You have not been charged. Please update your cart.")
