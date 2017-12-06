@@ -17,6 +17,14 @@ describe "the cart management path" do
     expect(page).to have_content("You and Your Bantha")
   end
 
+  it "displays errors if item cannot be added to cart" do
+    book = FactoryBot.create(:product)
+    visit product_path(book)
+    book.update(quantity: 0)
+    click_on "Add to cart"
+    expect(page).to have_content("Something went wrong")
+  end
+
   it "allows user to add items to cart" do
     book = FactoryBot.create(:product)
     visit product_path(book)
