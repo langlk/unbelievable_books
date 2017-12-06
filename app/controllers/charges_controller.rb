@@ -1,6 +1,7 @@
 class ChargesController < ApplicationController
   def new
     @cart = current_cart
+    @quotes = Currency.get_exchange_rates
   end
 
   def create

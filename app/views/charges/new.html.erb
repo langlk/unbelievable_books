@@ -22,6 +22,12 @@
       <label class="amount">
         <span>Order Total: $<%= @cart.price_total %></span>
       </label>
+      <p>
+        <strong>Other Currencies:</strong> 
+        <% @quotes.each do |currency, rate| %>
+          <span><strong><%= currency[3..-1] %>:</strong> <%= '%.2f' % (rate * @cart.price_total) %> </span>
+        <% end %>
+      </p>
     </article>
 
     <%= link_to cart_path do %>
