@@ -61,6 +61,33 @@ To install on your own machine, follow the instructions below:
   * content
 
 To Do:
+* Customer reviews on purchased products only
+* Confirmation email upon completed order (Mailing)
+  * Confirmation email once order shipped
+* Calculate cost of order in non-dollar currency (Currency Layer API)
+* Shipping and taxes (APIs)
+  * Sales tax added and calculated for shopping cart (Avalara's Tax Rate API)
+  * USPS's shipping rate for a product (rate calculator API. XML not JSON. Can also use Stripe API)
+* Random API of our choice
+
+* AJAX
+  * Click on a product to see detail without going to new page
+  * Add Item to shopping cart without refreshing page
+  * Edit Item in shopping cart without refreshing page
+  * Show and hide reviews
+  * Add review without going to new page
+    * Show review form only after clicking button
+  * Raincheck without page refresh
+  * Click thumbnail image to see full-size image in lightbox
+  * Paginate results
+    * Change page without refresh
+  * Sort product results without refresh
+  * Admin:
+    * Product CRUD without refresh
+    * Mark items as on sale without refresh
+
+
+Completed:
 
 * Admin
   * X CRUD for products
@@ -69,11 +96,9 @@ To Do:
   * X Discount (edit product)
     * X Time discount is in effect
     * X Discount for preferred customers
-  * Shipping and taxes (APIs)
   * X Out of Stock order block
     * X Block on add to cart
     * X Still need check when placing order
-  * Customer reviews on purchased products
 
 * User
   * X Shopping cart (add & remove, view)
@@ -86,19 +111,9 @@ To Do:
   * X Tag products "raincheck" --> viewable in cart
   * X Ability to move raincheck items into order proper
   * X View quantity (less than ten of product)
-  * Reviews (view & add)
+  * X Reviews (view & add)
   * X Access cart via account login
-  * Confirmation email upon completed order (Mailing)
-    * Confirmation email once order shipped
-
-* User API
-  * X Pay for purchases online (Stripe API)
-  * Calculate cost of order in non-dollar currency (Currency Layer API)
-  * Random API of our choice
-
-* Admin API   
-  * Sales tax added and calculated for shopping cart (Avalara's Tax Rate API)
-  * USPS's shipping rate for a product (rate calculator API. XML not JSON. Can also use Stripe API)
+  * X Pay for purchases online (Stripe API)  
 
 <!--
 * Unauthenticated users may:
