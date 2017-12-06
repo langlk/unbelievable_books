@@ -31,4 +31,18 @@ describe Account do
       expect(Order.first).to eq(user.account.raincheck)
     end
   end
+
+  describe '#has_purchased?' do
+    it "returns false if account has not placed an order that includes the book" do
+      account = FactoryBot.create(:account)
+      product = FactoryBot.create(:product)
+      expect(account.has_purchased?(product)).to eq(false)
+    end
+
+    it "returns true if account has placed an order that includes the book" do
+      order = FactoryBot.create(:order, status: "Placed")
+      item = FactoryBot.create(:order_item, order: order)
+      expect(order.account.has_purchased?(item.product)).to eq(true)
+    end
+  end
 end

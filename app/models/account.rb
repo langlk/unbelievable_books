@@ -21,4 +21,15 @@ class Account < ActiveRecord::Base
       return self.orders.create(status: "Rainchecked", raincheck: true, price_total: 0)
     end
   end
+
+  def has_purchased?(product)
+    Order.where(account: self, status: "Placed").each do |order|
+      order.order_items.each do |item|
+        if item.product == product
+          return true
+        end
+      end
+    end
+    return false
+  end
 end
