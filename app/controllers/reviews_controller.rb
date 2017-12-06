@@ -17,7 +17,10 @@ class ReviewsController < ApplicationController
       @review.account = current_user.account
       if @review.save
         flash[:notice] = "You have successfully reviewed this book!"
-        redirect_to product_path(@product)
+        respond_to do |format|
+          format.html { redirect_to product_path(@product) }
+          format.js
+        end      
       else
         flash[:alert] = @review.errors.full_messages
         render :new

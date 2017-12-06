@@ -1,24 +1,10 @@
 <h2>Reviews</h2>
 <% if @product.reviews.any? %>
-  <% @product.reviews.each do |review| %>
-    <div class="review">
-      <h3>By <%= review.account.user.email %></h3>
-      <p><%= review.content %></p>
-      <% if current_user %>
-        <p>
-          <% if review.account == current_user.account %>
-            <%= link_to "Edit", edit_product_review_path(@product, review) %> |
-          <% end %>
-          <% if (review.account == current_user.account) || current_user.admin? %>
-            <%= link_to "Delete", product_review_path(@product, review), data: {
-                    confirm: "Are you sure you want to incinerate this review with your blaster ray?",
-                    method: "delete"
-                    } %>
-          <% end %>
-        </p>
-      <% end %>
-    </div>
-  <% end %>
+  <div id="reviews">
+    <% @product.reviews.each do |review| %>
+      <%= render "reviews/review", review: review %>
+    <% end %>
+  </div>
 <% else %>
   <h3>There are no saved reviews for this book!</h3>
   <p>Be the first to voyage where no man has gone before!</p>
