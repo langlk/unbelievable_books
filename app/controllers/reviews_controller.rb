@@ -59,7 +59,7 @@ class ReviewsController < ApplicationController
   def destroy
     @product = Product.find(params[:product_id])
     @review = @product.reviews.find(params[:id])
-    if current_user.account == @review.account
+    if (current_user.account == @review.account) || current_user.admin?
       @review.destroy
       flash[:notice] = "This review was incinerated by your blaster ray."
     else
