@@ -4,10 +4,21 @@
     <div class="review">
       <h3>By <%= review.account.user.email %></h3>
       <p><%= review.content %></p>
+      <% if review.account == current_user.account %>
+        <p>
+          <%= link_to "Edit", edit_product_review_path(@product, review) %> |
+          <%= link_to "Delete", product_review_path(@product, review), data: {
+                    confirm: "Are you sure you want to incinerate this review with your blaster ray?",
+                    method: "delete"
+                    } %>
+        </p>
+      <% end %>
     </div>
   <% end %>
 <% else %>
   <h3>There are no saved reviews for this book!</h3>
   <p>Be the first to voyage where no man has gone before!</p>
 <% end %>
-<%= link_to "Add a Review", new_product_review_path(@product) %>
+<% if current_user.account.has_purchased?(@product) %>
+  <%= link_to "Add a Review", new_product_review_path(@product) %>
+<% end %>
