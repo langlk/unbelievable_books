@@ -1,0 +1,13 @@
+<h2>Reviews</h2>
+<% if @product.reviews.any? %>
+  <% @product.reviews.each do |review| %>
+    <div class="review">
+      <h3>By <%= review.account.user.email %></h3>
+      <p><%= review.content %></p>
+    </div>
+  <% end %>
+<% else %>
+  <h3>There are no saved reviews for this book!</h3>
+  <p>Be the first to voyage where no man has gone before!</p>
+<% end %>
+<%= link_to "Add a Review", new_product_review_path(@product) %>
