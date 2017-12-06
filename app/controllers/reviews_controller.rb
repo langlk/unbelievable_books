@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+  def index
+    @product = Product.find(params[:product_id])
+  end
+  
   def new
     @product = Product.find(params[:product_id])
     if current_user.account.has_purchased?(@product)
@@ -20,7 +24,7 @@ class ReviewsController < ApplicationController
         respond_to do |format|
           format.html { redirect_to product_path(@product) }
           format.js
-        end      
+        end
       else
         flash[:alert] = @review.errors.full_messages
         render :new

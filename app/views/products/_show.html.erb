@@ -1,4 +1,4 @@
-<div id="product-details-<%= @product.id %>">  
+<div id="product-details-<%= @product.id %>">
   <% if @product.featured %>
     <h5 class="text-success">Featured Title!</h5>
   <% end %>
@@ -53,9 +53,6 @@
                 } %>
     </p>
   <% end %>
-  <h5><%= link_to "Hide Reviews", product_path(@product), id: "hide_reviews", remote: true %></h5>
-  <h5><%= link_to "Show Reviews", product_path(@product), id: "show_reviews", remote: true %></h5>
-  <div id="reviews-container">
-    <%= render "reviews/index" %>
-  </div>
+  <h5><%= link_to "Hide Reviews", product_reviews_path(@product), id: "hide_reviews_#{@product.id}", remote: true %></h5>
+  <h5><%= link_to "Show Reviews", product_reviews_path(@product), id: "show_reviews_#{@product.id}", remote: true %></h5>
 </div>
