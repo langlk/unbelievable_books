@@ -61,7 +61,7 @@ To install on your own machine, follow the instructions below:
   * content
 
 To Do:
-* Customer reviews on purchased products only
+
 * Confirmation email upon completed order (Mailing)
   * Confirmation email once order shipped
 * Calculate cost of order in non-dollar currency (Currency Layer API)
@@ -99,6 +99,7 @@ Completed:
   * X Out of Stock order block
     * X Block on add to cart
     * X Still need check when placing order
+  * X Customer reviews on purchased products only
 
 * User
   * X Shopping cart (add & remove, view)

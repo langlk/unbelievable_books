@@ -2,7 +2,7 @@
 <% if @orders.any? %>
   <% @orders.each do |order| %>
     <div class="order">
-      <h3><%= order.created_at.strftime("%B %-d, %Y") %></h3>
+      <h3><%= order.updated_at.strftime("%B %-d, %Y") %></h3>
       <ul>
         <% order.order_items.each do |item| %>
           <li class="order-item">

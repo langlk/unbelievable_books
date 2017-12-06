@@ -24,5 +24,5 @@
   <p>Be the first to voyage where no man has gone before!</p>
 <% end %>
 <% if current_user && current_user.account.has_purchased?(@product) %>
-  <%= link_to "Add a Review", new_product_review_path(@product) %>
+  <%= link_to "Add a Review", new_product_review_path(@product), id: "new_link", remote: true %>
 <% end %>
