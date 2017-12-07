@@ -1,8 +1,9 @@
 class ReviewsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @product = Product.find(params[:product_id])
   end
-  
+
   def new
     @product = Product.find(params[:product_id])
     if current_user.account.has_purchased?(@product)
