@@ -24,8 +24,13 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      flash[:notice] = "Product created!"
-      redirect_to product_path(@product)
+      respond_to do |format|
+        format.html {
+          flash[:notice] = "Product created!"
+          redirect_to product_path(@product)
+        }
+        format.js
+      end
     else
       flash[:alert] = @product.errors.full_messages
       render :new

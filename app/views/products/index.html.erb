@@ -23,16 +23,13 @@
 <% end %>
 
 <h1>All Books</h1>
-<% if @products.any? %>
-  <% @products.each do |product| %>
-    <div class="product" id="product-<%= product.id %>">
-      <h3><%= link_to product.name, product_path(product), id: "show_product_#{product.id}", remote: true %></h3>
-      <% if product.quantity < 1 %>
-        <h5 class="text-danger">Sold Out!</h5>
-      <% end %>
-      <%= link_to 'Hide', products_path, class: "hidelink", id: "hide_details_#{product.id}", remote: true %>
-    </div>
+
+<div class="all-books">
+  <% if @products.any? %>
+    <% @products.each do |product| %>
+      <%= render 'product', product: product %>
+    <% end %>
+  <% else %>
+    <h3>There are no saved books.</h3>
   <% end %>
-<% else %>
-  <h3>There are no saved books.</h3>
-<% end %>
+</div>

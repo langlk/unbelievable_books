@@ -10,7 +10,7 @@ describe "the order history management path" do
   end
 
   it "displays all past orders for current user" do
-    order = FactoryBot.create(:order, account: @user.account, status: "Placed")
+    order = FactoryBot.create(:order, account: @user.account, status: "Placed", final_price: 10)
     item = FactoryBot.create(:order_item, order: order)
     visit orders_path
     expect(page).to have_content("You and Your Bantha")
