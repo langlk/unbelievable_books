@@ -71,7 +71,7 @@ describe Order, vcr: true do
   describe '#total_with_tax' do
     it "returns the total price of the order with Seattle sales tax added" do
       order_item = FactoryBot.create(:order_item)
-      expect(order_item.order.total_with_tax).to eq(order_item.order.price_total * TaxRate.get_tax_rate + order_item.order.price_total)
+      expect(order_item.order.total_with_tax).to eq((order_item.order.price_total * TaxRate.get_tax_rate + order_item.order.price_total).round(2))
     end
   end
 end

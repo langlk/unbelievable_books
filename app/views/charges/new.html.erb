@@ -23,9 +23,19 @@
         <span>Order Total: $<%= @cart.price_total %></span>
       </label>
       <p>
-        <strong>Other Currencies:</strong> 
+        <strong>Other Currencies:</strong>
         <% @quotes.each do |currency, rate| %>
           <span><strong><%= currency[3..-1] %>:</strong> <%= '%.2f' % (rate * @cart.price_total) %> </span>
+        <% end %>
+      </p>
+      <hr>
+      <label class="amount">
+        <span>With Tax: $<%= '%.2f' % @tax_total %></span>
+      </label>
+      <p>
+        <strong>Other Currencies:</strong>
+        <% @quotes.each do |currency, rate| %>
+          <span><strong><%= currency[3..-1] %>:</strong> <%= '%.2f' % (rate * @tax_total) %> </span>
         <% end %>
       </p>
     </article>
@@ -37,7 +47,7 @@
     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
             data-description="A month's subscription"
-            data-amount="<%= @cart.price_total * 100 %>"
+            data-amount="<%= @tax_total * 100 %>"
             data-locale="auto"></script>
   <% end %>
 <% end %>

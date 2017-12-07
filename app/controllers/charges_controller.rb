@@ -2,6 +2,7 @@ class ChargesController < ApplicationController
   def new
     @cart = current_cart
     @quotes = Currency.get_exchange_rates
+    @tax_total = current_cart.total_with_tax
   end
 
   def create
@@ -9,7 +10,7 @@ class ChargesController < ApplicationController
     # Check if everything in cart is valid
     if @cart.confirm_items
       # Amount in cents
-      @amount = @cart.price_total * 100
+      @amount = (@cart.total_with_tax * 100).to_i
 
       customer = Stripe::Customer.create(
         :email => params[:stripeEmail],

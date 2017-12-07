@@ -43,6 +43,6 @@ class Order < ActiveRecord::Base
 
   def total_with_tax
     tax_rate = TaxRate.get_tax_rate
-    (self.price_total * tax_rate) + self.price_total
+    ((self.price_total * tax_rate) + self.price_total).round(2)
   end
 end
