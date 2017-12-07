@@ -61,8 +61,13 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    flash[:notice] = "Product has sucked into a black hole."
-    redirect_to products_path
+    respond_to do |format|
+      format.html {
+        flash[:notice] = "Product has sucked into a black hole."
+        redirect_to products_path  
+      }
+      format.js
+    end
   end
 
 private

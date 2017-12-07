@@ -48,7 +48,7 @@
         <%= link_to "End Feature", product_path(product: { id: @product.id, featured: false}), data: { method: "patch" } %> |
       <% end %>
       <%= link_to "Edit", edit_product_path(@product), id: "product-edit", remote: true %> |
-      <%= link_to "Delete", product_path(@product), data: {
+      <%= link_to "Delete", product_path(@product), remote: true, data: {
                 confirm: "This will shoot the book into a black hole. Are you sure?",
                 method: "delete"
                 } %>
