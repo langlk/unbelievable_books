@@ -5,7 +5,20 @@ class ProductsController < ApplicationController
   def index
     @featured = Product.featured
     @discounted = Product.discounted
-    @products = Product.alphabetical.paginate(:page => params[:page], :per_page => 10)
+    if current_user
+      @preferred = current_user.account.preferred
+    else
+      @preferred = false
+    end
+
+    @sort_method = params[:sort_method] ? params[:sort_method] : "alphabetical"
+    if (@sort_method == 'price_ascending')
+      @products = Product.price_low_to_high(@preferred).paginate(:page => params[:page], :per_page => 10)
+    elsif(@sort_method == 'price_descending')
+      @products = Product.price_high_to_low(@preferred).paginate(:page => params[:page], :per_page => 10)
+    else
+      @products = Product.alphabetical.paginate(:page => params[:page], :per_page => 10)
+    end
   end
 
   def show

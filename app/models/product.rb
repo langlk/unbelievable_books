@@ -22,4 +22,16 @@ class Product < ActiveRecord::Base
     end
     return self.price
   end
+
+  def self.price_low_to_high(preferred=false)
+    return Product.all.sort do |a,b|
+      a.get_price(preferred) <=> b.get_price(preferred)
+    end
+  end
+
+  def self.price_high_to_low(preferred=false)
+    return Product.all.sort do |a,b|
+      b.get_price(preferred) <=> a.get_price(preferred)
+    end
+  end
 end
