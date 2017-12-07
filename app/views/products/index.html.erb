@@ -1,6 +1,6 @@
 
 <% if current_user && current_user.admin? %>
-  <h4><%= link_to "Add a Book", new_product_path %></h4>
+  <h4><%= link_to "Add a Book", new_product_path, id: "new_product_link", remote: true %></h4>
 <% end %>
 
 <% if @featured.any? %>
