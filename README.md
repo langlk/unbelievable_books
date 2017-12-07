@@ -13,10 +13,19 @@ _This is a mock website for an online book store. It has basic user authenticati
 To install on your own machine, follow the instructions below:
 
 * Clone this repository.
+* Create a ```.env``` file and format as follows:
+  ```
+  PUBLISHABLE_KEY='[Your Stripe Publishable Key]'
+  SECRET_KEY='[Your Stripe Secret Key]'
+
+  CURRENCYLAYERKEY='[Your Currency Layer Key]'
+  ```  
+  * You will need to acquire API keys for [Stripe](https://stripe.com/docs) and [Currency Layer](https://currencylayer.com/).
 * Run the following commands in the project root directory:
   ```
   bundle update
   rake db:setup
+  rails db:seed
   rails s
   ```
 * Open ```localhost:3000``` in your web browser
@@ -31,102 +40,56 @@ To install on your own machine, follow the instructions below:
 ## Specifications
 
 * Products  
-  * Name
-  * Description
-  * List_Price
-  * Quantity
-  * Discount
-  * Featured
-  * Author
-* Users
-  * Name
-  * email
-  * Password/ Password Confirmation
+  * All users may view products
+  * Administrators may add, edit, and delete products
+  * Administrators may set a product on sale until a specified date
+  * Users can raincheck a product for later purchase
 * Accounts
-  * account_id
-  * user_id
-* Order Items
-  * order_id
-  * product_id
-  * quantity
-  * reserved_price
+  * Accounts and Users have a one-to-one association
+  * Administrators may change an account's "Preferred" status
+    * Preferred accounts receive a 10% discount on non-sale items
+* Users
+  * Users may be either standard user or Admin
+  * Users may log in with email and password
 * Orders
-  * account_id
-  * price_total
-  * status
-  * Raincheck
+  * Orders are created and edited when a user updates or purchases their cart
+  * Orders are charged using [Stripe](https://stripe.com/docs)
+  * At checkout, total order cost is displayed in the following currencies:
+    * US Dollars
+    * Canadian Dollars
+    * Euros
+    * Great British Pounds
+    * Polish Złoty
+  * An order's status changes from "Cart" to "Placed" when user is charged for the order at checkout
+  * Orders may not be placed if there is not sufficient stock for all order items
+  * User receives a confirmation email once their order has been placed
+* Order Items
+  * Order items can be moved from Raincheck to Cart
+  * Order items reserve the price of the product at time they are added to cart
 * Reviews
-  * account_id
-  * product_id
-  * content
+  * Reviews cannot be added unless user has purchased the product
+  * Users may edit and delete their own reviews
+  * Administrators may delete any user reviews
+  * All users can view reviews
 
-To Do:
+## To Do:
 
-* Confirmation email upon completed order (Mailing)
-  * Confirmation email once order shipped
-* Calculate cost of order in non-dollar currency (Currency Layer API)
+* Confirmation email once order shipped
+
 * Shipping and taxes (APIs)
   * Sales tax added and calculated for shopping cart (Avalara's Tax Rate API)
   * USPS's shipping rate for a product (rate calculator API. XML not JSON. Can also use Stripe API)
+
 * Random API of our choice
 
 * AJAX
-  * X Click on a product to see detail without going to new page
-  * X Add Item to shopping cart without refreshing page
-  * X Raincheck without page refresh
-  * X Edit Item in shopping cart without refreshing page
-  * X Show and hide reviews
-  * X Add review without going to new page
-    * X Show review form only after clicking button
   * Click thumbnail image to see full-size image in lightbox
+  * Sort product results without refresh
   * Paginate results
     * Change page without refresh
-  * Sort product results without refresh
   * Admin:
     * Product CRUD without refresh
     * Mark items as featured without refresh
-
-
-Completed:
-
-* Admin
-  * X CRUD for products
-  * X feature product(s)
-  * X Price change (edit)
-  * X Discount (edit product)
-    * X Time discount is in effect
-    * X Discount for preferred customers
-  * X Out of Stock order block
-    * X Block on add to cart
-    * X Still need check when placing order
-  * X Customer reviews on purchased products only
-
-* User
-  * X Shopping cart (add & remove, view)
-  * X cleared cart upon purchase
-  * X display cart total (quantity & total cost). Navbar
-  * X List discounted items on site
-  * X Pay online (API)
-  * X Sign up/ create account
-  * X Order history
-  * X Tag products "raincheck" --> viewable in cart
-  * X Ability to move raincheck items into order proper
-  * X View quantity (less than ten of product)
-  * X Reviews (view & add)
-  * X Access cart via account login
-  * X Pay for purchases online (Stripe API)  
-
-<!--
-* Unauthenticated users may:
-  * View all products
-  * View product details
-  * View product reviews
-* Authenticated users may do all of the above as well as:
-  * Create reviews
-  * Edit and delete their own reviews
-* Authenticated admins may do all of the above as well as:
-  * Create, edit, and delete products.
-  * Delete user reviews. -->
 
 ## Support and contact details
 
@@ -138,7 +101,8 @@ _Please contact [kels.langlois@gmail.com](mailto:kels.langlois@gmail.com) or [ld
 * Rails
 * Bootstrap
 * Devise
-* Paperclip
+* Stripe
+* AJAX
 
 ### License
 
