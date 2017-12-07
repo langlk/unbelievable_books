@@ -26,7 +26,7 @@ class ChargesController < ApplicationController
       # Update products ordered to lower quantity appropriately
       @cart.remove_inventory
       # Change cart order from cart to placed.
-      @cart.update(status: "Placed")
+      @cart.update(status: "Placed", final_price: @amount)
       OrderMailer.order_confirmation(@cart).deliver
     else
       flash[:alert] = @cart.errors.full_messages

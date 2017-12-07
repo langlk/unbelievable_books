@@ -11,6 +11,7 @@ Your Order:
   $<%= item.reserved_price %> each | $<%= item.reserved_price * item.quantity %> total
 <% end %>
 Order total: $<%= @order.price_total %>
+With Tax: $<%= @order.get_final_price %>
 
 Thank you for your patronage!
 

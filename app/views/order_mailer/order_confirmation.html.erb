@@ -18,6 +18,7 @@ Greetings,
     <% end %>
   </ul>
   <p><strong>Order total: $<%= @order.price_total %></strong></p>
+  <p><strong>With Tax: $<%= @order.get_final_price %></strong></p>
 </div>
 
 <p>Thank you for your patronage!</p>

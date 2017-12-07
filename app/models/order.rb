@@ -45,4 +45,8 @@ class Order < ActiveRecord::Base
     tax_rate = TaxRate.get_tax_rate
     ((self.price_total * tax_rate) + self.price_total).round(2)
   end
+
+  def get_final_price
+    return (self.final_price / 100.0).round(2)
+  end
 end
