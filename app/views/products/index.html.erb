@@ -1,28 +1,37 @@
+<div class="page-header">
+  <h1>Unbelievable Books</h1>
+</div>
 
 <% if current_user && current_user.admin? %>
   <h4><%= link_to "Add a Book", new_product_path, id: "new_product_link", remote: true %></h4>
 <% end %>
 
-<% if @featured.any? %>
-  <h1>Featured</h1>
-  <div class="featured-products">
-    <% @featured.each do |product| %>
-      <div class="product-feature" id="feature-<%= product.id %>">
-        <h3><%= link_to product.name, product_path(product) %></h3>
+<div class="spotlight">
+  <% if @featured.any? %>
+    <div class="feature-wrapper">
+      <h1>Featured</h1>
+      <div class="featured-products">
+        <% @featured.each do |product| %>
+          <div class="product-feature" id="feature-<%= product.id %>">
+            <h3><%= link_to product.name, product_path(product) %></h3>
+          </div>
+        <% end %>
       </div>
-    <% end %>
-  </div>
-<% end %>
-
-<% if @discounted.any? %>
-  <h1>On Sale</h1>
-  <% @discounted.each do |product| %>
-    <div class="product-sale">
-      <h3><%= link_to product.name, product_path(product) %></h3>
-      <h5 class="text-success">On sale until: <%= product.discount_end.strftime("%B %-d, %Y") %></h5>
     </div>
   <% end %>
-<% end %>
+
+  <% if @discounted.any? %>
+    <div class="sale-wrapper">
+      <h1>On Sale</h1>
+      <% @discounted.each do |product| %>
+        <div class="product-sale">
+          <h3><%= link_to product.name, product_path(product) %></h3>
+          <h5 class="text-success">On sale until: <%= product.discount_end.strftime("%B %-d, %Y") %></h5>
+        </div>
+      <% end %>
+    </div>
+  <% end %>  
+</div>
 
 <h1>All Books</h1>
 
