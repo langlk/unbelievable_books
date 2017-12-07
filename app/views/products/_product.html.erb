@@ -3,5 +3,4 @@
   <% if product.quantity < 1 %>
     <h5 class="text-danger">Sold Out!</h5>
   <% end %>
-  <%= link_to 'Hide', products_path, class: "hidelink", id: "hide_details_#{product.id}", remote: true %>
 </div>

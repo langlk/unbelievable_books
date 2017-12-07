@@ -1,2 +1,6 @@
 $('#edit_product_<%= @product.id %>').before("<%= j render 'show' %>");
 $('#edit_product_<%= @product.id %>').remove();
+$('#hide_details_<%= @product.id %>').click(function() {
+  $('#product-details-<%= @product.id %>').before('<%= j render @product %>')
+  $('#product-details-<%= @product.id %>').remove();
+});
