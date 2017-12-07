@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "the checkout path" do
+describe "the checkout path", :vcr => true do
   before do
     @user = FactoryBot.create(:user, admin: true)
     visit '/users/sign_in'
@@ -18,8 +18,4 @@ describe "the checkout path" do
     expect(page).to have_content("You and Your Bantha")
     expect(page).to have_no_content("Rainchecked")
   end
-
-
-
-
 end

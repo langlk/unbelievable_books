@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://apilayer.net/api/live?access_key=<currencylayer_key>&currencies=CAD,EUR,GBP,PLN
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - rest-client/2.0.2 (darwin15.6.0 x86_64) ruby/2.4.1p111
+      Host:
+      - apilayer.net
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 07 Dec 2017 16:23:20 GMT
+      Content-Type:
+      - application/json; Charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Apilayer-Transaction-Id:
+      - bc144ced-33f3-4cc6-9793-577979c5b272
+      Last-Modified:
+      - Thu, 07 Dec 2017 15:49:14 GMT
+      Etag:
+      - 16bc16d1df79121b610b25c8353394db
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Request-Time:
+      - '0.028'
+    body:
+      encoding: UTF-8
+      string: '{"success":true,"terms":"https:\/\/currencylayer.com\/terms","privacy":"https:\/\/currencylayer.com\/privacy","timestamp":1512661754,"source":"USD","quotes":{"USDCAD":1.285197,"USDEUR":0.847501,"USDGBP":0.74561,"USDPLN":3.570699}}'
+    http_version: 
+  recorded_at: Thu, 07 Dec 2017 16:23:20 GMT
+recorded_with: VCR 4.0.0
