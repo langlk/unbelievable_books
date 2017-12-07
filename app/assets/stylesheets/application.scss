@@ -14,9 +14,13 @@ body {
 }
 
 .container.contents {
-  background-color: rgba(210, 210, 210, 0.74);
+  background-color: rgba(254, 241, 173, 0.66);
   border-radius: 20px;
   padding: 20px 40px;
+}
+
+hr {
+  border-top: 2px solid #4f4154;
 }
 
 .user-product-options {

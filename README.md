@@ -75,18 +75,10 @@ To install on your own machine, follow the instructions below:
   * Administrators may delete any user reviews
   * All users can view reviews
 
-## To Do:
+## Known Bugs:
 
-* Confirmation email once order shipped
-
-* Shipping and taxes (APIs)
-  * USPS's shipping rate for a product (rate calculator API. XML not JSON. Can also use Stripe API)
-
-* Random API of our choice
-
-* AJAX
-  * Click thumbnail image to see full-size image in lightbox
-  * Sort product results without refresh
+* _When updating a product to "Featured," if there are no other featured products AJAX will not display the "Featured" section without a page refresh._
+* _Products updated to "On Sale" will not display in the "On Sale" section of the homepage without a page refresh._
 
 ## Support and contact details
 

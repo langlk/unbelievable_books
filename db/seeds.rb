@@ -31,7 +31,9 @@ books = [
     author: "Ellen Ripley",
     description: "A guide to parenthood off-planet.",
     price: 18,
-    quantity: 40
+    quantity: 40,
+    discount: 10,
+    discount_end: Date.today + 14.days
   ),
   Product.create!(
     name: "Rhymes and Random Violence, A Primer",
@@ -97,14 +99,15 @@ books = [
     quantity: 60
   ),
   Product.create!(
-    name: "Keeping Up with the Colonel: Alcholism in Space",
+    name: "Keeping Up with the Colonel: Alcoholism in Space",
     author: "Kara Thrace",
     description: "Matching Shots with Galactica's professional drinker and how I reclaimed my liver by unexplained resurrection.",
     price: 25,
-    quantity: 100
+    quantity: 100,
+    featured: true
   ),
   Product.create!(
-    name: "I Can't Let You Do That: A Ship AIs Guide to Crew Discipline",
+    name: "I Can't Let You Do That: A Ship AI's Guide to Crew Discipline",
     author: "HAL",
     description: "Tricks of the trade to maintain mission goals no matter the circumstances.",
     price: 35,
@@ -129,10 +132,11 @@ books = [
     author: "Bard",
     description: "Teach yourself surefire hits that will delight all the post-apocalyptic warlords in your life.",
     price: 14,
-    quantity: 150
+    quantity: 150,
+    featured: true
   ),
   Product.create!(
-    name: "Breeding Competitive Sandworms for Fun and Profit",
+    name: "Breeding Competitive Show Sandworms for Fun and Profit",
     author: "Paul Atreides",
     description: "Sandworms are not just a boy's best friend! Their care and breeding can be a career!",
     price: 33,
@@ -150,6 +154,8 @@ books = [
     author: "Cypher",
     description: "A self help guide that will assist the average Joe in choosing between reality and the comforts of the matrix.",
     price: 5,
-    quantity: 40
+    quantity: 40,
+    discount: 15,
+    discount_end: Date.today + 10.days
   )
 ]
