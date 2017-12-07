@@ -39,3 +39,16 @@
 .reviews {
   display: none;
 }
+
+.faux-link {
+  color: #337ab7;
+}
+
+.faux-link:hover {
+  cursor: pointer;
+}
+
+.faux-link:focus, .faux-link:hover {
+  color: #23527c;
+  text-decoration: underline;
+}

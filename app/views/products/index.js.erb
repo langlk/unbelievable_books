@@ -1,0 +1,3 @@
+$('.all-books').html('<%= j render "products" %>');
+$('.page-wrapper').html('<%= j will_paginate @products %>');
+$('.pagination > a').attr('data-remote', 'true');

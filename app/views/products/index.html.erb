@@ -27,13 +27,9 @@
 <h1>All Books</h1>
 
 <div class="all-books">
-  <% if @products.any? %>
-    <% @products.each do |product| %>
-      <%= render 'product', product: product %>
-    <% end %>
-  <% else %>
-    <h3>There are no saved books.</h3>
-  <% end %>
+  <%= render 'products' %>
 </div>
 
-<%= will_paginate @products %>
+<div class="page-wrapper">
+  <%= will_paginate @products %>
+</div>

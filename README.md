@@ -86,10 +86,8 @@ To install on your own machine, follow the instructions below:
 * AJAX
   * Click thumbnail image to see full-size image in lightbox
   * Sort product results without refresh
-  * Paginate results
+  * X Paginate results
     * Change page without refresh
-  * Admin:
-    * Mark items as featured without refresh
 
 ## Support and contact details
 

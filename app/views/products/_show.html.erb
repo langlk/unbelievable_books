@@ -3,7 +3,7 @@
   <% if @product.featured %>
     <h5 class="text-success">Featured Title!</h5>
   <% end %>
-  <h1><%= link_to @product.name, products_path, id: "hide_details_#{@product.id}", remote: true %></h1>
+  <h1 class="faux-link" id="hide_details_<%= @product.id %>" data-remote="true"><%= @product.name %></h1>
   <h4>By <%= @product.author %></h4>
   <% if @product.has_discount? %>
     <h3><del>$<%= @product.price %></del> <span class="text-success">$<%= @product.get_price %></span></h3>
