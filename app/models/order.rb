@@ -40,4 +40,9 @@ class Order < ActiveRecord::Base
       item.product.update(quantity: item.product.quantity - item.quantity)
     end
   end
+
+  def total_with_tax
+    tax_rate = TaxRate.get_tax_rate
+    (self.price_total * tax_rate) + self.price_total
+  end
 end
