@@ -81,5 +81,75 @@ books = [
     description: "Knitting patterns to pass the time while fleeing the Empire.",
     price: 30,
     quantity: 15
+  ),
+  Product.create!(
+    name: "Science and Design: Interior Decoration for All Your Testing Needs",
+    author: "Glados",
+    description: "Feng Shui that can kill and educate.",
+    price: 30,
+    quantity: 25
+  ),
+  Product.create!(
+    name: "Wasteland Brainteasers: A book to Pass the Time Waiting for Humanity to Return",
+    author: "ED-E",
+    description: "Logic puzzles that will keep even the most robotic mind busy and entertained.",
+    price: 11,
+    quantity: 60
+  ),
+  Product.create!(
+    name: "Keeping Up with the Colonel: Alcholism in Space",
+    author: "Kara Thrace",
+    description: "Matching Shots with Galactica's professional drinker and how I reclaimed my liver by unexplained resurrection.",
+    price: 25,
+    quantity: 100
+  ),
+  Product.create!(
+    name: "I Can't Let You Do That: A Ship AIs Guide to Crew Discipline",
+    author: "HAL",
+    description: "Tricks of the trade to maintain mission goals no matter the circumstances.",
+    price: 35,
+    quantity: 12
+  ),
+  Product.create!(
+    name: "Deckard's Cocktail Go-Tos",
+    author: "Rick Deckard",
+    description: "Drink mixes that are guaranteed to dull your uncertainty about your own humanity.",
+    price: 30,
+    quantity: 15
+  ),
+  Product.create!(
+    name: "Wubba Lubba Dub Dub",
+    author: "Rick Sanchez",
+    description: "A scientist's guide to dealing with depression and substance abuse.",
+    price: 20,
+    quantity: 40
+  ),
+  Product.create!(
+    name: "Basic Guitar Chords for the Road",
+    author: "Bard",
+    description: "Teach yourself surefire hits that will delight all the post-apocalyptic warlords in your life.",
+    price: 14,
+    quantity: 150
+  ),
+  Product.create!(
+    name: "Breeding Competitive Sandworms for Fun and Profit",
+    author: "Paul Atreides",
+    description: "Sandworms are not just a boy's best friend! Their care and breeding can be a career!",
+    price: 33,
+    quantity: 50
+  ),
+  Product.create!(
+    name: "View from a Window Ledge: The Beginning of my Journey into Flight",
+    author: "Flower Pot",
+    description: "A short treatise on the effects of improbability drives on innocent bystanders",
+    price: 12,
+    quantity: 5
+  ),
+  Product.create!(
+    name: "Truth or Steak: Is a Virtual World Right for You",
+    author: "Cypher",
+    description: "A self help guide that will assist the average Joe in choosing between reality and the comforts of the matrix.",
+    price: 5,
+    quantity: 40
   )
 ]
