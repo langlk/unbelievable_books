@@ -45,6 +45,7 @@ To install on your own machine, follow the instructions below:
   * Administrators may add, edit, and delete products
   * Administrators may set a product on sale until a specified date
   * Users can raincheck a product for later purchase
+  * Users can sort product index by one of three methods: alphabetical, price (low to high), and price (high to low)
 * Accounts
   * Accounts and Users have a one-to-one association
   * Administrators may change an account's "Preferred" status

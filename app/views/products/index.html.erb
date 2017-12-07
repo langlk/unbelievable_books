@@ -26,9 +26,9 @@
 
 <h1>All Books</h1>
 
-<%= form_tag(products_path, method: "get") do %>
-  <%= select_tag(:sort_method, options_for_select([['Alphabetical', 'alphabetical'], ['Price (Low to high)', 'price_ascending'], ['Price (High to low)', 'price_descending']], @sort_method) ) %>
-  <%= submit_tag "Sort", class: "btn btn-default" %>
+<%= form_tag products_path, method: "get", id: "sort-form", remote: true  do %>
+  <%= select_tag :sort_method, options_for_select([['Alphabetical', 'alphabetical'], ['Price (Low to high)', 'price_ascending'], ['Price (High to low)', 'price_descending']], @sort_method), remote: true %>
+  <%= submit_tag "Sort", id: "sort-method-button", class: "btn btn-default" %>
 <% end %>
 
 <div class="all-books">
