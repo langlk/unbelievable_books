@@ -19,8 +19,9 @@ To install on your own machine, follow the instructions below:
   SECRET_KEY='[Your Stripe Secret Key]'
 
   CURRENCYLAYERKEY='[Your Currency Layer Key]'
+  AVATAX_KEY='[Your Avatax API Key]'
   ```  
-  * You will need to acquire API keys for [Stripe](https://stripe.com/docs) and [Currency Layer](https://currencylayer.com/).
+  * You will need to acquire API keys for [Stripe](https://stripe.com/docs), [AvaTax](https://developer.avalara.com/avatax/dev-guide/) and [Currency Layer](https://currencylayer.com/).
 * Run the following commands in the project root directory:
   ```
   bundle update
@@ -60,6 +61,7 @@ To install on your own machine, follow the instructions below:
     * Euros
     * Great British Pounds
     * Polish Złoty
+  * At checkout, Seattle sales tax is added to the order total
   * An order's status changes from "Cart" to "Placed" when user is charged for the order at checkout
   * Orders may not be placed if there is not sufficient stock for all order items
   * User receives a confirmation email once their order has been placed
@@ -77,7 +79,7 @@ To install on your own machine, follow the instructions below:
 * Confirmation email once order shipped
 
 * Shipping and taxes (APIs)
-  * Sales tax added and calculated for shopping cart (Avalara's Tax Rate API)
+  * X Sales tax added and calculated for shopping cart (Avalara's Tax Rate API)
   * USPS's shipping rate for a product (rate calculator API. XML not JSON. Can also use Stripe API)
 
 * Random API of our choice
