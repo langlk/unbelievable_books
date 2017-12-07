@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   def index
     @featured = Product.featured
     @discounted = Product.discounted
-    @products = Product.alphabetical
+    @products = Product.alphabetical.paginate(:page => params[:page], :per_page => 10)
   end
 
   def show
@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       format.html {
         flash[:notice] = "Product has sucked into a black hole."
-        redirect_to products_path  
+        redirect_to products_path
       }
       format.js
     end

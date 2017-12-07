@@ -15,6 +15,7 @@ gem 'devise'
 gem 'paperclip', '~> 5.0.0'
 gem 'stripe'
 gem 'rest-client'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri
