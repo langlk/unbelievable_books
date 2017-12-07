@@ -55,4 +55,5 @@
   <% end %>
   <h5><%= link_to "Hide Reviews", products_path, class: "hidelink", id: "hide_reviews_#{@product.id}", remote: true %></h5>
   <h5><%= link_to "Show Reviews", product_reviews_path(@product), id: "show_reviews_#{@product.id}", remote: true %></h5>
+  <%= render "reviews/index" %>
 </div>

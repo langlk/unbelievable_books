@@ -1,7 +1,8 @@
-$('#show_reviews_<%= @product.id %>').hide().after("<%= j render('reviews/index') %>");
+$('#show_reviews_<%= @product.id %>').hide();
+$("#reviews-<%= @product.id %>").show();
 $('#hide_reviews_<%= @product.id %>').show().click(function(event) {
   event.preventDefault();
   $('#show_reviews_<%= @product.id %>').show();
   $('#hide_reviews_<%= @product.id %>').hide();
-  $('#reviews-<%= @product.id %>').remove();
+  $('#reviews-<%= @product.id %>').hide();
 });
