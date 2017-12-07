@@ -71,4 +71,5 @@ VCR.configure do |c|
   c.filter_sensitive_data('<publishable_key>') { ENV['PUBLISHABLE_KEY'] }
   c.filter_sensitive_data('<secret_key>') { ENV['SECRET_KEY'] }
   c.filter_sensitive_data('<currencylayer_key>') { ENV['CURRENCYLAYERKEY'] }
+  c.filter_sensitive_data('<avatax_key>') { ENV['AVATAX_KEY'] }
 end
