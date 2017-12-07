@@ -1,4 +1,4 @@
-<li class="order-item-<%= item.id %>">
+<li id="order-item-<%= item.id %>">
   <%= item.quantity %>
   <%= link_to item.product.name, product_path(item.product) %>
   $<%= item.reserved_price %> each |
