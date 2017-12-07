@@ -5,11 +5,13 @@
 
 <% if @featured.any? %>
   <h1>Featured</h1>
-  <% @featured.each do |product| %>
-    <div class="product-feature">
-      <h3><%= link_to product.name, product_path(product) %></h3>
-    </div>
-  <% end %>
+  <div class="featured-products">
+    <% @featured.each do |product| %>
+      <div class="product-feature" id="feature-<%= product.id %>">
+        <h3><%= link_to product.name, product_path(product) %></h3>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
 <% if @discounted.any? %>

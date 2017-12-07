@@ -79,7 +79,6 @@ To install on your own machine, follow the instructions below:
 * Confirmation email once order shipped
 
 * Shipping and taxes (APIs)
-  * X Sales tax added and calculated for shopping cart (Avalara's Tax Rate API)
   * USPS's shipping rate for a product (rate calculator API. XML not JSON. Can also use Stripe API)
 
 * Random API of our choice
@@ -90,7 +89,6 @@ To install on your own machine, follow the instructions below:
   * Paginate results
     * Change page without refresh
   * Admin:
-    * Product CRUD without refresh
     * Mark items as featured without refresh
 
 ## Support and contact details

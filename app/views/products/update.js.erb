@@ -1,6 +1,15 @@
+$('#product-details-<%= @product.id %>').after("<%= j render 'show' %>");
+$('#product-details-<%= @product.id %>').remove();
 $('#edit_product_<%= @product.id %>').before("<%= j render 'show' %>");
 $('#edit_product_<%= @product.id %>').remove();
 $('#hide_details_<%= @product.id %>').click(function() {
   $('#product-details-<%= @product.id %>').before('<%= j render @product %>')
   $('#product-details-<%= @product.id %>').remove();
 });
+
+<% if @product.featured %>
+  $('#feature-<%= @product.id %>').remove();
+  $('.featured-products').prepend('<div class="product-feature" id="feature-<%= @product.id %>"><h3><%= link_to @product.name, product_path(@product) %></h3></div>');
+<% else %>
+  $('#feature-<%= @product.id %>').remove();
+<% end %>

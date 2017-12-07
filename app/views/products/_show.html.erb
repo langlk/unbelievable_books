@@ -43,9 +43,9 @@
     <hr>
     <p>
       <% if !@product.featured %>
-        <%= link_to "Feature", product_path(product: { id: @product.id, featured: true}), data: { method: "patch" } %> |
+        <%= link_to "Feature", product_path(product: { id: @product.id, featured: true}), id: "add_feature", remote: true, data: { method: "patch" } %> |
       <% else %>
-        <%= link_to "End Feature", product_path(product: { id: @product.id, featured: false}), data: { method: "patch" } %> |
+        <%= link_to "End Feature", product_path(product: { id: @product.id, featured: false}), id: "remove_feature", remote: true, data: { method: "patch" } %> |
       <% end %>
       <%= link_to "Edit", edit_product_path(@product), id: "product-edit", remote: true %> |
       <%= link_to "Delete", product_path(@product), remote: true, data: {
