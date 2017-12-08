@@ -79,6 +79,7 @@ To install on your own machine, follow the instructions below:
 
 * _When updating a product to "Featured," if there are no other featured products AJAX will not display the "Featured" section without a page refresh._
 * _Products updated to "On Sale" will not display in the "On Sale" section of the homepage without a page refresh._
+* _If cart is empty, refresh is required to display change of item from Raincheck to Cart._
 
 ## Support and contact details
 
