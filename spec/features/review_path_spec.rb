@@ -43,4 +43,14 @@ describe "the review management path" do
     click_button "Save"
     expect(page).to have_content("This is a fantastic book!")
   end
+
+  it "does not allow a user to edit someone else's review" do
+    user2 = FactoryBot.create(:user, email: 'test2@test.com')
+    order = FactoryBot.create(:order, account: user2.account, status: "Placed")
+    item = FactoryBot.create(:order_item, order: order)
+    review = FactoryBot.create(:review, product: item.product, account: user2.account)
+    visit edit_product_review_path(item.product, review)
+    expect(page).to have_content("This isn't your review! You are meddling with forces beyond your control.")
+    expect(page).to have_no_content("Edit Review")
+  end
 end
