@@ -80,4 +80,22 @@ describe Product do
       expect(Product.discounted).to eq([p2])
     end
   end
+
+  describe '.price_low_to_high' do
+    it "returns all products in order of price from cheapest to most expensive" do
+      p1 = FactoryBot.create(:product, price: 100)
+      p2 = FactoryBot.create(:product, price: 100, discount: 20, discount_end: Date.today)
+      p3 = FactoryBot.create(:product, price: 100, discount: 40, discount_end: Date.today - 5.day)
+      expect(Product.price_low_to_high).to eq([p2, p1, p3])
+    end
+  end
+
+  describe '.price_high_to_low' do
+    it "returns all products in order from most expensive to cheapest" do
+      p1 = FactoryBot.create(:product, price: 100)
+      p2 = FactoryBot.create(:product, price: 100, discount: 20, discount_end: Date.today)
+      p3 = FactoryBot.create(:product, price: 90, discount: 20, discount_end: Date.today - 5.day)
+      expect(Product.price_high_to_low).to eq([p1,p3,p2])
+    end
+  end
 end
