@@ -1,4 +1,4 @@
-<div class="form">
+<div id="product-edit-<%= @product.id %>" class="form product-details-panel">
   <%= form_for @product, remote: true do |f| %>
     <div class="form-group">
       <%= f.label :name %>
