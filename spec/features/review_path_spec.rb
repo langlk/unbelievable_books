@@ -53,4 +53,13 @@ describe "the review management path" do
     expect(page).to have_content("This isn't your review! You are meddling with forces beyond your control.")
     expect(page).to have_no_content("Edit Review")
   end
+
+  it "allows user to delete their reviews" do
+    order = FactoryBot.create(:order, account: @user.account, status: "Placed")
+    item = FactoryBot.create(:order_item, order: order)
+    review = FactoryBot.create(:review, product: item.product, account: @user.account)
+    visit product_reviews_path(item.product)
+    click_on "Delete"
+    expect(page).to have_no_content("This book made me want to leave the Earth permanently!")
+  end
 end
