@@ -41,6 +41,11 @@ a:hover, a:focus {
   color: #ffbb32;
 }
 
+#username a:hover {
+  color: #fed686;
+  cursor: default;
+}
+
 .container.contents {
   background-color: rgba(254, 241, 173, 0.66);
   border-radius: 20px;
