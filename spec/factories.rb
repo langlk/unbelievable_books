@@ -26,10 +26,14 @@ FactoryBot.define do
 
   factory(:order_item) do
     order
-    product 
+    product
     quantity(5)
   end
 
-
+  factory(:review) do
+    account
+    product
+    content("This book made me want to leave the Earth permanently!")
+  end
 
 end

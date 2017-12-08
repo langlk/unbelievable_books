@@ -32,4 +32,15 @@ describe "the review management path" do
     click_button "Save"
     expect(page).to have_content("Something went wrong")
   end
+
+  it "allows a user to edit their own reviews" do
+    order = FactoryBot.create(:order, account: @user.account, status: "Placed")
+    item = FactoryBot.create(:order_item, order: order)
+    review = FactoryBot.create(:review, product: item.product, account: @user.account)
+    visit product_reviews_path(item.product)
+    click_on "Edit"
+    fill_in "Content", with: "This is a fantastic book!"
+    click_button "Save"
+    expect(page).to have_content("This is a fantastic book!")
+  end
 end
